@@ -89,6 +89,7 @@ RUN set -x \
 	&& ./configure \
 		--prefix="$HTTPD_PREFIX" \
 		--enable-mods-shared=reallyall \
+		--with-mpm=worker \
 	&& make -j "$(nproc)" \
 	&& make install \
 	\

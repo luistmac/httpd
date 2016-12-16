@@ -69,6 +69,7 @@ RUN set -x \
 	&& ./configure \
 		--prefix="$HTTPD_PREFIX" \
 		--enable-mods-shared=reallyall \
+		--with-mpm=worker \
 	&& make -j "$(getconf _NPROCESSORS_ONLN)" \
 	&& make install \
 	\
